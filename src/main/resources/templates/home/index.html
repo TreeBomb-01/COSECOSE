@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.nz/thymeleaf/layout">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello Spring Boot</title>
+    <title>CoseCose</title>
 </head>
 <body>
+    <th:block th:replace="home/header :: header"></th:block>  <!--헤더 파일 불러오기-->
     <h1>robot</h1>
     <h2>Hello Spring Boot</h2>
     <h3 th:text ="${test}"></h3>
@@ -14,5 +15,8 @@
             <li th:text="${no}"></li>
         </th:block>
     </ul>
+
+    <th:block th:replace="home/footer :: footer"></th:block>
+    
 </body>
 </html>

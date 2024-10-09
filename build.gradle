@@ -23,9 +23,10 @@ repositories {
 	mavenCentral()
 }
 
-dependencies {
+dependencies { //의존성 주입 하는 곳(아마도?)
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect' //의존성 주입(헤더 풋터를 넣을 준비)
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	annotationProcessor 'org.projectlombok:lombok'

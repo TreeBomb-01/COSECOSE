@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 
 
+
 @Controller
 public class HomeController {
     
@@ -13,7 +14,13 @@ public class HomeController {
     public String home(Model model) {
         
         model.addAttribute("test", "안녕하세요~!");
-        return "index";
+        return "home/index.html";
     }
+
+    @GetMapping("login_form")
+    public String login_form(Model model) {
+        return "home/login_form";
+    }
+    
     
 }
