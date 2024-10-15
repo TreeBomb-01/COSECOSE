@@ -1,2 +1,2 @@
 # COSECOSE
-Java version : 17
+Java version : 11.0.16.1
