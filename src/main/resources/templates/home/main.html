@@ -6,7 +6,7 @@
     <title>CoseCose</title>
 </head>
 <body>
-    <th:block th:replace="home/header :: header"></th:block>  <!--헤더 파일 불러오기-->
+    <th:block th:replace="~{home/header :: header}"></th:block>  <!--헤더 파일 불러오기-->
     <h1>robot</h1>
     <h2>Hello Spring Boot</h2>
     <h3 th:text ="${test}"></h3>
@@ -16,7 +16,7 @@
         </th:block>
     </ul>
 
-    <th:block th:replace="home/footer :: footer"></th:block>
+    <th:block th:replace="~{home/footer :: footer}"></th:block>
     
 </body>
 </html>

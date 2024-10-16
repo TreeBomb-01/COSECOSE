@@ -14,7 +14,7 @@ public class HomeController {
     public String home(Model model) {
         
         model.addAttribute("test", "안녕하세요~!");
-        return "home/index.html";
+        return "home/main";
     }
 
     @GetMapping("login_form")
