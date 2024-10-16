@@ -1,0 +1,119 @@
+/* 로그인 폼 스타일 */
+.login-form {
+    width: 300px;
+    margin: 100px auto;
+    padding: 30px;
+    border: 1px solid #ffc0cb;
+    border-radius: 10px;
+    background-color: #ffc0cb;
+}
+
+/* 폼 제목 스타일 */
+.login-form h2 {
+    text-align: center;
+}
+
+/* 입력 필드와 레이블 감싸기 */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* 레이블과 입력 필드를 블록으로 */
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* 버튼 스타일 */
+.form-group but/* 로그인 폼 전체 레이아웃 */
+.login-form {
+    width: 350px;
+    margin: 100px auto;
+    padding: 40px 30px;
+    border: 1px solid #ffc0cb;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: #ffc0cb;
+}
+
+/* 로그인 폼 제목 */
+.login-form h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+    color: #ffffff;
+}
+
+/* 입력 필드 스타일 */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 15px;
+    font-size: 14px;
+    border: 1px solid #ffc0cb;
+    border-radius: 4px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.form-group input:focus {
+    border-color: #ffc0cb;
+    box-shadow: 0 0 5px pink(3, 199, 90, 0.3);
+}
+
+/* 버튼 스타일 */
+.form-group button {
+    width: 100%;
+    padding: 15px;
+    background-color: #df4597;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.form-group button:hover {
+    background-color: #cf25b3;
+}
+
+/* 추가 옵션 스타일 (아이디 찾기, 비밀번호 찾기, 회원가입) */
+.additional-options {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 13px;
+    color: #df4597;
+}
+
+.additional-options a {
+    color: #df4597;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.additional-options a:hover {
+    text-decoration: underline;
+}
+ton {
+    width: 100%;
+    padding: 10px;
+    background-color: #ffc0cb;
+    color: ffc0cb;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-group button:hover {
+    background-color: #ff00ae;
+}
