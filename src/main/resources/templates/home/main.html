@@ -1,22 +1,32 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.nz/thymeleaf/layout">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CoseCose</title>
-</head>
-<body>
-    <th:block th:replace="~{home/header :: header}"></th:block>  <!--헤더 파일 불러오기-->
-    <h1>robot</h1>
-    <h2>Hello Spring Boot</h2>
-    <h3 th:text ="${test}"></h3>
-    <ul>
-        <th:block th:each="no : ${#numbers.sequence(1,5)}">
-            <li th:text="${no}"></li>
-        </th:block>
-    </ul>
-
-    <th:block th:replace="~{home/footer :: footer}"></th:block>
+<html lang="en" xmlns="http://www.thymeleaf.org">
+<th:block th:fragment="main">
+    <link rel="stylesheet" th:href="@{/home_css/main.css}" type="text/css">
+    <body>
+        <section class="slider">
+            <div class="slides">
+                <div class="slide">
+                    <img src="image1.jpg" alt="이미지 1">
+                </div>
+                <div class="slide">
+                    <img src="image2.jpg" alt="이미지 2">
+                </div>
+                <div class="slide">
+                    <img src="image3.jpg" alt="이미지 3">
+                </div>
+            </div>
+        </section>
     
-</body>
+        <!-- 페이지 내용 -->
+        <div class="content">
+            <h1>메인 페이지 내용</h1>
+            <p>여기에 페이지 내용을 추가하세요.</p>
+        </div>
+    
+        <!-- 메인 전용 JS 파일 연결 -->
+        <!-- <script src="main.js"></script> -->
+
+
+    </body>
+</th:block>
 </html>

@@ -24,6 +24,8 @@ repositories {
 }
 
 dependencies { //의존성 주입 하는 곳(아마도?)
+	
+	implementation 'com.oracle.database.jdbc:ojdbc8:19.8.0.0' // 버전은 필요에 따라 변경 oracle을 사용하기 위한 의존성 주입
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect' //의존성 주입(헤더 풋터를 넣을 준비)
