@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.robot.cose.mapper.TimeMapper"> <!-- 인테페이스 위치로 맞춰야함 -->
+	
+	<select id="getTime" resultType="String"> <!-- 인터페이스 안에있는 메서드 명으로 해야함 -->
+		SELECT SYSDATE FROM DUAL
+	</select>
+	
+</mapper>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.robot.cose.mapper.MemberMapper"> <!-- 인테페이스 위치로 맞춰야함 -->
+
+	<insert id="insert">
+		INSERT INTO member (email, password, name, tel, birthday, nicname, place, gender, taste, coupleId)
+			VALUES (#{email}, 
+			#{password},
+			#{name},
+			#{tel}, 
+			TO_DATE(#{birthday}, 'YYYY-MM-DD'), 
+			#{nicname}, 
+			#{place}, 
+			#{gender}, 
+			#{taste}, 
+			 null)
+	</insert>
+
+ 	<select id="selectAll">
+		SELECT  email,
+				password,
+				name,
+				tel,
+				birthday,
+				nicname,
+				place,
+				gender,
+				taste,
+				coupleId
+		FROM MEMBER
+	</select>
+	
+</mapper>

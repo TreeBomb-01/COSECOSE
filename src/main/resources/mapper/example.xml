@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.korea.db.mapper.ProductMapper"> <!-- 인테페이스 위치로 맞춰야함 -->
+	
+	<insert id="insert">
+		INSERT INTO PRODUCT
+		(PRODUCT_ID, PRODUCT_NAME,PRODUCT_STOCK,PRODUCT_PRICE)
+		VALUES(SEQ_PRODUCT.NEXTVAL, #{productName},#{productStock},#{productPrice})	
+	</insert>
+	
+ 	<select id="selectAll">
+		SELECT  PRODUCT_ID,
+				PRODUCT_NAME,
+				PRODUCT_STOCK,
+				PRODUCT_PRICE,
+				REGISTER_DATE,
+				UPDATE_DATE
+		FROM PRODUCT
+	</select>
+	
+</mapper>
