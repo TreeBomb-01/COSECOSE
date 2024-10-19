@@ -23,9 +23,8 @@ repositories {
 	mavenCentral()
 }
 
-dependencies { //의존성 주입 하는 곳(아마도?)
+dependencies { //의존성 주입 하는 곳
 	
-	implementation 'com.oracle.database.jdbc:ojdbc8:19.8.0.0' // 버전은 필요에 따라 변경 oracle을 사용하기 위한 의존성 주입
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect' //의존성 주입(헤더 풋터를 넣을 준비)
@@ -34,6 +33,24 @@ dependencies { //의존성 주입 하는 곳(아마도?)
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+	testCompileOnly 'org.projectlombok:lombok'
+    testAnnotationProcessor 'org.projectlombok:lombok'
+
+	//위에거 건들 ㄴ
+
+	// https://mvnrepository.com/artifact/org.mybatis.spring.boot/mybatis-spring-boot-starter
+	implementation group: 'org.mybatis.spring.boot', name: 'mybatis-spring-boot-starter', version: '3.0.3'
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-jdbc
+	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+	runtimeOnly 'com.oracle.database.jdbc:ojdbc11' //ojdbc
+	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.3'
+
+
+
+
+
+
 }
 
 tasks.named('test') {

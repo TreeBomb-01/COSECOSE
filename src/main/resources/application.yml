@@ -1,0 +1,18 @@
+spring:
+    application.name : cose
+    #JDBC dataSource
+    datasource:
+        hikari:
+            driver-class-name: oracle.jdbc.OracleDriver
+            jdbc-url: jdbc:oracle:thin:@localhost:1521:XE
+            username: cosecose
+            password: 1111
+server:
+    port : 8090
+
+logging:
+  level:
+    root: INFO  # 기본 로그 레벨
+  file:
+    name: logs/application.log  # 로그 파일 경로
+
