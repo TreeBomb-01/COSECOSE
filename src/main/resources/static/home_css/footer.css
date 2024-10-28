@@ -10,7 +10,6 @@
     align-items: center; /* 세로로 중앙 정렬 */
     padding: 20px;
     border-top: 2px solid #ccc; /* 메인과 구분할 수 있는 윤곽선 */
-    position: fixed; /* 화면 하단에 고정 */
     bottom: 0;
     left: 0;
     right: 0;

@@ -1,3 +1,11 @@
+/* 전체 레이아웃 설정 */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* 가로 스크롤 방지 */
+}
+
 /* 슬라이더 스타일 */
 .slider {
     margin-top: 20px; /* 헤더와의 간격 */
@@ -59,4 +67,63 @@
 .content_second {
     padding: 20px;
     margin-top: 20px;
+}
+
+.content-subtitle {
+    width: 80%; /* 슬라이더와 동일한 너비 */
+    margin: 20px auto; /* 가운데 정렬 */
+    text-align: center;
+}
+
+.content-subtitle h2 {
+    font-size: 24px;
+    color: #333;
+    font-weight: bold;
+}
+
+
+/* 메인 페이지 CSS */
+
+.main-content {
+    width: 80%; /* 슬라이더와 동일한 너비 */
+    margin: 0 auto; /* 가운데 정렬 */
+    display: flex;
+    justify-content: space-between; /* 이미지들 사이에 간격 설정 */
+    padding: 20px 0;
+}
+
+/* 이미지 카드 설정 */
+.image-card {
+    flex-grow: 1; /* 각 이미지가 균등하게 확장 */
+    text-align: center;
+    margin: 0 5px; /* 각 이미지 사이에 10px 간격 (좌우 5px씩) */
+}
+
+
+/* 네모난 이미지 칸 */
+.image-box {
+    width: 100%; /* 가로 크기를 부모의 100%로 설정 */
+    height: 200px;
+    background-color: #f4f4f4;
+    border: 2px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    color: #555;
+    border-radius: 8px;
+}
+
+/* 텍스트 링크로 페이지 이동 */
+.link-text {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 16px;
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.link-text:hover {
+    color: #0056b3;
 }
