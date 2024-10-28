@@ -1,10 +1,13 @@
 /* 슬라이더 스타일 */
 .slider {
     margin-top: 20px; /* 헤더와의 간격 */
-    width: 100%;
-    max-width: 100%;
+    width: 80%;
+    height: 150px;
+    max-width: 80%;
     overflow: hidden; /* 슬라이더 영역 밖은 숨김 */
     position: relative;
+    margin-left: auto; /* 슬라이더를 가운데 정렬하기 위한 설정 */
+    margin-right: auto; /* 슬라이더를 가운데 정렬하기 위한 설정 */
     border: 2px solid #ccc; /* 윤곽선을 추가하여 슬라이더 영역을 구분 */
     border-radius: 8px; /* 모서리를 둥글게 */
 }
@@ -13,18 +16,20 @@
 .slides {
     display: flex;
     width: 300%; /* 슬라이드 수에 따라 변경 */
+    /* transition: transform 0.5s ease-in-out; 슬라이드 전환에 부드러운 효과 추가 */
     animation: slide 12s infinite;
 }
 
 /* 각 슬라이드 */
 .slide {
     width: 100%;
+    height: 150px;
     flex-shrink: 0;
 }
 
 .slide img {
     width: 100%;
-    height: 200px; /* 높이는 너무 크지 않게 조정 */
+    height: 150px; /* 높이는 너무 크지 않게 조정 */
     object-fit: cover;
     border-bottom: 2px solid #ccc; /* 이미지 하단에 윤곽선 추가 */
 }
@@ -45,8 +50,13 @@
     }
 }
 
-/* 메인 페이지 내용 */
 .content {
+    margin-top: 70px; /* 헤더 높이만큼의 여백 */
+    padding: 20px;
+}
+
+
+.content_second {
     padding: 20px;
     margin-top: 20px;
 }

@@ -1,7 +1,46 @@
-.footer_outBox{
-    background-color:pink;
-    height:100px;
-    align-items: center;
-    justify-content: center;
+/* 메인 페이지 CSS */
+
+/* 푸터 스타일 */
+.footer {
+    width: 100%;
+    background-color: #f4f4f4; /* 밝은 배경색 */
+    color: #333; /* 텍스트 색상 */
     display: flex;
+    justify-content: space-between; /* 좌측과 중앙을 공간을 두고 배치 */
+    align-items: center; /* 세로로 중앙 정렬 */
+    padding: 20px;
+    border-top: 2px solid #ccc; /* 메인과 구분할 수 있는 윤곽선 */
+    position: fixed; /* 화면 하단에 고정 */
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+/* 좌측 코스코스 문구 */
+.footer-left {
+    text-align: left;
+    flex: 1;
+}
+
+/* 중앙 문의사항 및 연락처 */
+.footer-center {
+    text-align: center;
+    flex: 1;
+}
+
+/* 우측 코스코스 문구 */
+.footer-right {
+    text-align: right;
+    flex: 1;
+}
+
+/* 텍스트 스타일 */
+.footer h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.footer p {
+    margin: 5px 0;
+    font-size: 14px;
 }

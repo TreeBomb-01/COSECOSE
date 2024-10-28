@@ -3,22 +3,23 @@
 <th:block th:fragment="main">
     <link rel="stylesheet" th:href="@{/home_css/main.css}" type="text/css">
     <body>
-        <section class="slider">
-            <div class="slides">
-                <div class="slide">
-                    <img src="image1.jpg" alt="이미지 1">
-                </div>
-                <div class="slide">
-                    <img src="image2.jpg" alt="이미지 2">
-                </div>
-                <div class="slide">
-                    <img src="image3.jpg" alt="이미지 3">
-                </div>
-            </div>
-        </section>
-    
         <!-- 페이지 내용 -->
         <div class="content">
+            <section class="slider">
+                <div class="slides">
+                    <div class="slide">
+                        <img th:src="@{/images/ad1.png}" alt="이미지 1">
+                    </div>
+                    <div class="slide">
+                        <img th:src="@{/images/ad2.png}" alt="이미지 2">
+                    </div>
+                    <div class="slide">
+                        <img th:src="@{/images/ad3.png}" alt="이미지 3">
+                    </div>
+                </div>
+            </section>  
+        </div>
+        <div class="content_sencond">
             <h1>메인 페이지 내용</h1>
             <p>여기에 페이지 내용을 추가하세요.</p>
         </div>
