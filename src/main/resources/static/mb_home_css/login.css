@@ -1,0 +1,55 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    background-color: #ffffff;
+    font-family: Arial, sans-serif;
+    position: relative; /* footer를 포함하기 위해 relative로 설정 */
+}
+
+.title {
+    font-size: 36px;
+    color: #f7a7a8;
+    margin-bottom: 40px;
+}
+
+.button {
+    width: 80%;
+    max-width: 300px;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+/* Footer 스타일 */
+footer {
+    position: absolute;
+    bottom: 10px; /* 화면 하단에서의 위치 */
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    color: #777;
+}
+
+footer a {
+    text-decoration: none;
+    color: black; /* 강조 색상 */
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

@@ -14,14 +14,6 @@ public class HomeController {
     
     @GetMapping(value = "/")
     public String home(Model model) {
-        return "home/index";
+        return "mobile/mb_home/login";
     }
-
-    @GetMapping("login_form")
-    public String login_form(Model model) {
-        return "home/login_form";
-    }
-    
-    
-    
 }
