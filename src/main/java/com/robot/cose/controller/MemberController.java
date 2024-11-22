@@ -49,7 +49,7 @@ public class MemberController {
 
     @PostMapping("register")
     public RedirectView register(MemberDTO memberDTO) {
-        memberMapper.insert(memberDTO);        
+        //memberMapper.insert(memberDTO);
         return new RedirectView("memberList");
     }
 

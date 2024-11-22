@@ -9,5 +9,7 @@ import java.util.List;
 public interface MemberMapper {
     public List<MemberDTO> selectAll();
 
-    public void insert(MemberDTO memberDTO);
+    public void registerNewMember(MemberDTO memberDTO);
+
+    public boolean isNewMember(String email);
 }

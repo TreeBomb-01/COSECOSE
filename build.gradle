@@ -24,27 +24,35 @@ repositories {
 }
 
 dependencies { //의존성 주입 하는 곳
-	
+
+	// Thymeleaf 관련
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect' //의존성 주입(헤더 풋터를 넣을 준비)
+	implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect'
+
+	// Lombok 관련
 	compileOnly 'org.projectlombok:lombok'
-	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	annotationProcessor 'org.projectlombok:lombok'
+
+	// 개발 편의성 관련
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+	// 테스트 관련
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-
 	testCompileOnly 'org.projectlombok:lombok'
-    testAnnotationProcessor 'org.projectlombok:lombok'
+	testAnnotationProcessor 'org.projectlombok:lombok'
 
-	//위에거 건들 ㄴ
-
-	// https://mvnrepository.com/artifact/org.mybatis.spring.boot/mybatis-spring-boot-starter
-	implementation group: 'org.mybatis.spring.boot', name: 'mybatis-spring-boot-starter', version: '3.0.3'
-	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-jdbc
-	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
-	runtimeOnly 'com.oracle.database.jdbc:ojdbc11' //ojdbc
+	// MyBatis 관련
 	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.3'
+
+	// Spring JDBC
+	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+
+	// MySQL 드라이버 추가
+	runtimeOnly 'mysql:mysql-connector-java:8.0.33'
+
+	// JSON 처리 라이브러리
+	implementation 'org.json:json:20230227'
 
 
 
