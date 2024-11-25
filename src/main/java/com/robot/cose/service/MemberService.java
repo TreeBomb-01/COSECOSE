@@ -2,6 +2,7 @@ package com.robot.cose.service;
 
 import com.robot.cose.dto.MemberDTO;
 import com.robot.cose.mapper.MemberMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;
@@ -28,4 +29,10 @@ public class MemberService{
     public boolean checkMemberByEmail(String email) {
         return memberMapper.isNewMember(email);
     }
+
+    public boolean checkMemberNeedMoreInfo(String email) {
+        boolean needMoreInfo = memberMapper.checkMemberNeedMoreinfo(email);
+        System.out.println(needMoreInfo);
+        return needMoreInfo;
+    };
 }

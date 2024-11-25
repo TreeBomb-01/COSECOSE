@@ -12,4 +12,6 @@ public interface MemberMapper {
     public void registerNewMember(MemberDTO memberDTO);
 
     public boolean isNewMember(String email);
+
+    public boolean checkMemberNeedMoreinfo(String email);
 }

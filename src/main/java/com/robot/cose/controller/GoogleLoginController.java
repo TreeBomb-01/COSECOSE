@@ -29,8 +29,11 @@ public class GoogleLoginController {
 
     @GetMapping("/callback")
     public String callback(@RequestParam("code") String code) {
-        String email = googleLoginService.handleGoogleLogin(code);
-        System.out.println(email);
-        return "mobile/mb_home/google_login";
+        String result = googleLoginService.handleGoogleLogin(code);
+        System.out.println(result);
+        if (result == "Welcome back") {
+            return "mobile/mb_home/main";
+        }
+        return "mobile/mb_home/more_register";
     }
 }

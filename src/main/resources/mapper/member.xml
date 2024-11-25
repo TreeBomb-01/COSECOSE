@@ -30,6 +30,14 @@
 		) AS is_exist;
 	</select>
 
+	<select id="checkMemberNeedMoreinfo" resultType="Boolean" parameterType="String">
+		SELECT EXISTS (
+			SELECT 1
+			FROM member
+			WHERE email = #{email} and dob IS NULL
+		) AS is_exist;
+	</select>
+
 
 	
 </mapper>

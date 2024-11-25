@@ -40,7 +40,8 @@ public class GoogleLoginService {
                 + "&response_type=code"
                 + "&scope=https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile";
     }
-
+    
+    //접근코드발급
     public String getAccessToken(String code) {
         try {
             RestTemplate restTemplate = new RestTemplate();
@@ -65,6 +66,7 @@ public class GoogleLoginService {
         }
     }
 
+    //사용자 정보
     public JSONObject getUserInfo(String accessToken) {
         try {
             RestTemplate restTemplate = new RestTemplate();
@@ -80,6 +82,7 @@ public class GoogleLoginService {
         }
     }
 
+    //구글 로그인 핸들링
     public String handleGoogleLogin(String code) {
         // Access Token 요청
         String accessToken = getAccessToken(code);
@@ -102,10 +105,13 @@ public class GoogleLoginService {
 
         // 신규/기존 회원 확인
         if (memberService.checkMemberByEmail(emailstr)) {
-            return "Welcome back! Your email: " + emailstr;
+            if(memberService.checkMemberNeedMoreInfo(emailstr)) {
+                return "needModeInfo";
+            }
+            return "Welcome back";
         } else {
             memberService.registerNewMember(emailstr,"GOOGLE");
-            return "New user registered with email: " + emailstr;
+            return "New user";
         }
     }
 }

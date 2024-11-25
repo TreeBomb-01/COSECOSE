@@ -45,6 +45,9 @@ public class KakaoLoginController {
     public String checkUser(@RequestParam("code") String code){
         String email = kakaoLoginService.handleKakaoLogin(code);
         System.out.println(email);
-        return "mobile/mb_home/kakao_login";
+        if (email.equals("Welcome back")) {
+            return "mobile/mb_home/main";
+        }
+        return "mobile/mb_home/more_register";
     }
 }

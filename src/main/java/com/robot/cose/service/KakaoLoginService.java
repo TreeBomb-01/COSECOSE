@@ -127,10 +127,13 @@ public class KakaoLoginService {
         String emailstr = email.getString("email");
         // 신규/기존 회원 확인
         if (memberService.checkMemberByEmail(emailstr)) {
-            return "Welcome back! Your email: " + emailstr;
+            if(memberService.checkMemberNeedMoreInfo(emailstr)) {
+                return "needModeInfo";
+            }
+            return "Welcome back";
         } else {
-            memberService.registerNewMember(emailstr,"Kakao");
-            return "New user registered with email: " + emailstr;
+            memberService.registerNewMember(emailstr,"KAKAO");
+            return "New user";
         }
     }
 }
