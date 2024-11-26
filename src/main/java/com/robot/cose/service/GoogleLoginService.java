@@ -99,7 +99,7 @@ public class GoogleLoginService {
         System.out.println(userInfo);
         // 이메일 추출
         if (!userInfo.has("email")) { //email 정보가 있는지 없는지 확인
-            throw new RuntimeException("Email not provided by Kakao.");
+            throw new RuntimeException("Email not provided by GOOGLE.");
         }
         String emailstr = userInfo.getString("email");
 

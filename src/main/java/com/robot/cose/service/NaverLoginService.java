@@ -82,7 +82,7 @@ public class NaverLoginService {
         }
     }
 
-    public String handleGoogleLogin(String code, String state) {
+    public String handleNaverLogin(String code, String state) {
         // Access Token 요청
         String accessToken = getAccessToken(code, state);
 
@@ -99,15 +99,15 @@ public class NaverLoginService {
         // 이메일 추출
         JSONObject email = userInfo.getJSONObject("response");
         if (!email.has("email")) { //email 정보가 있는지 없는지 확인
-            throw new RuntimeException("Email not provided by Kakao.");
+            throw new RuntimeException("Email not provided by Naver.");
         }
 
         String emailstr = email.getString("email");
         // 신규/기존 회원 확인
         if (memberService.checkMemberByEmail(emailstr)) {
-            return "Welcome back! Your email: " + emailstr;
+            return "Welcome back";
         } else {
-            memberService.registerNewMember(emailstr,"GOOGLE");
+            memberService.registerNewMember(emailstr,"NAVER");
             return "New user registered with email: " + emailstr;
         }
     }
