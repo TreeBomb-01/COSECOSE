@@ -1,7 +1,6 @@
 package com.robot.cose.controller;
 
 import com.robot.cose.service.NaverLoginService;
-import org.json.JSONObject;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -28,16 +27,13 @@ public class NaverLoginController {
     }
 
     @GetMapping("/callback")
-    public ResponseEntity<String> callback(@RequestParam("code") String code, @RequestParam("state") String state) {
-        try {
-            String accessToken = naverLoginService.getAccessToken(code, state);
-            JSONObject userInfo = naverLoginService.getUserInfo(accessToken);
-
-            // 사용자 정보 반환
-            return ResponseEntity.ok(userInfo.toString());
-        } catch (RuntimeException e) {
-            return ResponseEntity.status(500).body("Error: " + e.getMessage());
+    public String callback(@RequestParam("code") String code, @RequestParam("state") String state) {
+        String result = naverLoginService.handleNaverLogin(code, state);
+        System.out.println(result);
+        if (result.equals("Welcome back")) {
+            return "mobile/mb_home/main";
         }
+        return "mobile/mb_home/more_register";
     }
 }
 
