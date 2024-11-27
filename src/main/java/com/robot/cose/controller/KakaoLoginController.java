@@ -5,6 +5,7 @@ import com.robot.cose.service.KakaoLoginService;
 import groovy.lang.GString;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import lombok.RequiredArgsConstructor;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
@@ -24,13 +25,10 @@ import java.net.URL;
 
 @Controller
 @RequestMapping("/kakao")
+@RequiredArgsConstructor
 public class KakaoLoginController {
 
     private final KakaoLoginService kakaoLoginService;
-
-    public KakaoLoginController(KakaoLoginService kakaoLoginService) {
-        this.kakaoLoginService = kakaoLoginService;
-    }
 
     @GetMapping("/login")
     public ResponseEntity<Void> loginPage(){

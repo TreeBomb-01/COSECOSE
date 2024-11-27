@@ -1,17 +1,16 @@
 package com.robot.cose.controller;
 
-import java.util.List;
+import java.util.Map;
 
+import com.robot.cose.service.MemberService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
 import com.robot.cose.dto.MemberDTO;
-import com.robot.cose.mapper.MemberMapper;
 
 import lombok.RequiredArgsConstructor;
 
@@ -23,22 +22,23 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class MemberController {
 
-    private final MemberMapper memberMapper;
+    private final MemberService memberService;
 
-    
-    
+
+    @PostMapping("/signup")
+    public ResponseEntity<?> registerUser(@RequestBody MemberDTO memberDTO) {
+        try {
+            memberService.more_register(memberDTO);
+            return ResponseEntity.ok().body(Map.of("message", "회원가입이 완료되었습니다."));
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Map.of("error", e.getMessage()));
+        }
+    }
+
     @RequestMapping("login")
     public String login(@RequestParam String email, String pwd) {
-        
+
         return new String();
-    }
-    
-    @GetMapping("memberList")
-    public String listString(Model model) {
-        List<MemberDTO> list = memberMapper.selectAll();
-        model.addAttribute("list", list);
-        System.out.println(list.toString());
-        return "admin/member-list";
     }
 
     @GetMapping("register")
@@ -52,10 +52,5 @@ public class MemberController {
         //memberMapper.insert(memberDTO);
         return new RedirectView("memberList");
     }
-
-    
-    
-    
-    
     
 }

@@ -34,5 +34,13 @@ public class MemberService{
         boolean needMoreInfo = memberMapper.checkMemberNeedMoreinfo(email);
         System.out.println(needMoreInfo);
         return needMoreInfo;
-    };
+    }
+
+    public void more_register(MemberDTO memberDTO) {
+        //로직 구현해야함
+    }
+
+    public String getMemberUuid(String email) {
+        return memberMapper.getMemberUuid(email);
+    }
 }

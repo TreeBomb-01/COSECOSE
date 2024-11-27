@@ -1,5 +1,6 @@
 package com.robot.cose.service;
 
+import lombok.RequiredArgsConstructor;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
@@ -17,13 +18,10 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 @Service
+@RequiredArgsConstructor
 public class KakaoLoginService {
 
     private final MemberService memberService;
-
-    public KakaoLoginService(MemberService memberService) {
-        this.memberService = memberService;
-    }
 
 
     @Value("${kakao.client_id}") //카카오로그인 키값

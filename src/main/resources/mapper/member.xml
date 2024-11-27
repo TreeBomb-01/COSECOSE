@@ -38,6 +38,10 @@
 		) AS is_exist;
 	</select>
 
-
+	<select id="getMemberUuid" resultType="String" parameterType="String">
+		SELECT UUID
+		FROM member
+		WHERE email = #{email}
+	</select>
 	
 </mapper>

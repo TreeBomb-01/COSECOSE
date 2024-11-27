@@ -1,5 +1,6 @@
 package com.robot.cose.service;
 
+import lombok.RequiredArgsConstructor;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
@@ -12,13 +13,10 @@ import java.util.UUID;
 
 
 @Service
+@RequiredArgsConstructor
 public class NaverLoginService {
 
     private final MemberService memberService;
-
-    public NaverLoginService(MemberService memberService) {
-        this.memberService = memberService;
-    }
 
     @Value("${naver.client-id}")
     private String clientId;

@@ -2,6 +2,7 @@ package com.robot.cose.service;
 
 
 
+import lombok.RequiredArgsConstructor;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
@@ -10,13 +11,14 @@ import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @Service
+@RequiredArgsConstructor
 public class GoogleLoginService {
     private final MemberService memberService;
 
-    private GoogleLoginService(MemberService memberService) {
-        this.memberService = memberService;
-    }
 
     @Value("${google.client-id}")
     private String clientId;
@@ -83,7 +85,8 @@ public class GoogleLoginService {
     }
 
     //구글 로그인 핸들링
-    public String handleGoogleLogin(String code) {
+    public HashMap<String,String> handleGoogleLogin(String code) {
+        HashMap<String,String> result = new HashMap<>();
         // Access Token 요청
         String accessToken = getAccessToken(code);
 
@@ -102,16 +105,20 @@ public class GoogleLoginService {
             throw new RuntimeException("Email not provided by GOOGLE.");
         }
         String emailstr = userInfo.getString("email");
+        result.put("email", emailstr);
 
         // 신규/기존 회원 확인
         if (memberService.checkMemberByEmail(emailstr)) {
             if(memberService.checkMemberNeedMoreInfo(emailstr)) {
-                return "needModeInfo";
+                result.put("result","needModeInfo");
+                return result;
             }
-            return "Welcome back";
+            result.put("result","Welcome back");
+            return result;
         } else {
             memberService.registerNewMember(emailstr,"GOOGLE");
-            return "New user";
+            result.put("result","New Member");
+            return result;
         }
     }
 }

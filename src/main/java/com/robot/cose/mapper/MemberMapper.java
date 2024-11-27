@@ -14,4 +14,6 @@ public interface MemberMapper {
     public boolean isNewMember(String email);
 
     public boolean checkMemberNeedMoreinfo(String email);
+
+    public  String getMemberUuid(String email);
 }
