@@ -16,6 +16,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.HashMap;
 
 @Service
 @RequiredArgsConstructor
@@ -102,7 +103,8 @@ public class KakaoLoginService {
     }
 
     //카카오 로그인 핸들링 acctoken -> userinfo -> email -> 신규/기존 회원 판별
-    public String handleKakaoLogin(String code) {
+    public HashMap<String, String> handleKakaoLogin(String code) {
+        HashMap<String, String> result =   new HashMap<>();
         // Access Token 요청
         String accessToken = getAccessToken(code);
 
@@ -123,15 +125,19 @@ public class KakaoLoginService {
         }
         
         String emailstr = email.getString("email");
+        result.put("email", emailstr);
         // 신규/기존 회원 확인
         if (memberService.checkMemberByEmail(emailstr)) {
             if(memberService.checkMemberNeedMoreInfo(emailstr)) {
-                return "needModeInfo";
+                result.put("result", "needMoreInfo");
+                return result;
             }
-            return "Welcome back";
+            result.put("result","Welcome back");
+            return result;
         } else {
             memberService.registerNewMember(emailstr,"KAKAO");
-            return "New user";
+            result.put("result","New Member");
+            return result;
         }
     }
 }

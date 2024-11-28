@@ -2,6 +2,8 @@ package com.robot.cose.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.robot.cose.service.KakaoLoginService;
+import com.robot.cose.service.MemberService;
+import com.robot.cose.util.JwtUtil;
 import groovy.lang.GString;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -22,6 +24,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.HashMap;
 
 @Controller
 @RequestMapping("/kakao")
@@ -29,6 +32,7 @@ import java.net.URL;
 public class KakaoLoginController {
 
     private final KakaoLoginService kakaoLoginService;
+    private final MemberService memberService;
 
     @GetMapping("/login")
     public ResponseEntity<Void> loginPage(){
@@ -41,9 +45,11 @@ public class KakaoLoginController {
     //콜백 함수 access 토큰, 사용자 정보 받아오고 반환
     @GetMapping("/callback")
     public String checkUser(@RequestParam("code") String code){
-        String email = kakaoLoginService.handleKakaoLogin(code);
-        System.out.println(email);
-        if (email.equals("Welcome back")) {
+        HashMap<String,String> result = kakaoLoginService.handleKakaoLogin(code);
+        String uuid = memberService.getMemberUuid(result.get("email"));
+        String jwt = JwtUtil.generateToken(uuid);
+        System.out.println("jwt: " + jwt);
+        if (result.get("email").equals("Welcome back")) {
             return "mobile/mb_home/main";
         }
         return "mobile/mb_home/more_register";

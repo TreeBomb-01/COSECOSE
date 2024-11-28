@@ -9,6 +9,7 @@ import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.HashMap;
 import java.util.UUID;
 
 
@@ -80,7 +81,8 @@ public class NaverLoginService {
         }
     }
 
-    public String handleNaverLogin(String code, String state) {
+    public HashMap<String, String> handleNaverLogin(String code, String state) {
+        HashMap<String, String> result = new HashMap<>();
         // Access Token 요청
         String accessToken = getAccessToken(code, state);
 
@@ -101,12 +103,19 @@ public class NaverLoginService {
         }
 
         String emailstr = email.getString("email");
+        result.put("email", emailstr);
         // 신규/기존 회원 확인
         if (memberService.checkMemberByEmail(emailstr)) {
-            return "Welcome back";
+            if(memberService.checkMemberByEmail(emailstr)){
+                result.put("result","needModeInfo");
+                return result;
+            }
+            result.put("result","Welcome back");
+            return result;
         } else {
             memberService.registerNewMember(emailstr,"NAVER");
-            return "New user registered with email: " + emailstr;
+            result.put("result","New Member");
+            return result;
         }
     }
 }
