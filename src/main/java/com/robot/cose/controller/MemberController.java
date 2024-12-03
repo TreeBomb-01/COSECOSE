@@ -3,6 +3,7 @@ package com.robot.cose.controller;
 import java.util.Map;
 
 import com.robot.cose.service.MemberService;
+import com.robot.cose.util.JwtUtil;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -52,5 +53,7 @@ public class MemberController {
         //memberMapper.insert(memberDTO);
         return new RedirectView("memberList");
     }
+
+
     
 }

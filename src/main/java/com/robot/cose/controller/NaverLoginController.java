@@ -39,7 +39,7 @@ public class NaverLoginController {
         if (result.get("result").equals("Welcome back")) {
             return "mobile/mb_home/main";
         }
-        return "mobile/mb_home/more_register";
+        return "mobile/mb_home/more_register.js";
     }
 }
 

@@ -1,32 +1,23 @@
 package com.robot.cose.controller;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.robot.cose.service.KakaoLoginService;
 import com.robot.cose.service.MemberService;
 import com.robot.cose.util.JwtUtil;
-import groovy.lang.GString;
-import jakarta.servlet.http.HttpServletRequest;
+
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
-import org.json.JSONObject;
+
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
+import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
+import java.util.Map;
 
-@Controller
+@CrossOrigin(origins = "http://localhost:4000")
+@RestController
 @RequestMapping("/kakao")
 @RequiredArgsConstructor
 public class KakaoLoginController {
@@ -34,24 +25,21 @@ public class KakaoLoginController {
     private final KakaoLoginService kakaoLoginService;
     private final MemberService memberService;
 
-    @GetMapping("/login")
-    public ResponseEntity<Void> loginPage(){
-        String kakaoLoginUrl = kakaoLoginService.loginPage();
-        return ResponseEntity.status(302) // HTTP 리다이렉트 상태코드
-                .header("Location", kakaoLoginUrl) // 리다이렉트 URL 설정
-                .build();
-    }
+//    @GetMapping("/login")
+//    public ResponseEntity<String> loginPage(){
+//        String kakaoLoginUrl = kakaoLoginService.loginPage();
+//        return ResponseEntity.ok(kakaoLoginUrl);
+//    }
 
-    //콜백 함수 access 토큰, 사용자 정보 받아오고 반환
-    @GetMapping("/callback")
-    public String checkUser(@RequestParam("code") String code){
-        HashMap<String,String> result = kakaoLoginService.handleKakaoLogin(code);
+    @PostMapping("/callback")
+    public ResponseEntity<Map<String, String>> checkUser(@RequestBody Map<String, String> request) {
+        HashMap<String, String> result = kakaoLoginService.handleKakaoLogin(request.get("code"));
         String uuid = memberService.getMemberUuid(result.get("email"));
         String jwt = JwtUtil.generateToken(uuid);
-        System.out.println("jwt: " + jwt);
-        if (result.get("email").equals("Welcome back")) {
-            return "mobile/mb_home/main";
-        }
-        return "mobile/mb_home/more_register";
+        
+        // JSON 형태로 JWT 반환
+        Map<String, String> response = new HashMap<>();
+        response.put("token", jwt);
+        return ResponseEntity.ok(response);
     }
 }

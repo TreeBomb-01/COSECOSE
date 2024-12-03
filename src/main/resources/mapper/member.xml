@@ -43,5 +43,40 @@
 		FROM member
 		WHERE email = #{email}
 	</select>
+
+	<select id="checkMemberNickname" resultType="Boolean" parameterType="String">
+		SELECT EXISTS (
+			SELECT 1
+			FROM member
+			WHERE nickname = #{nickname}
+		) AS is_exist;
+	</select>
+
+	<select id="checkMoreInfoForUuid" resultType="Boolean" parameterType="String">
+		SELECT EXISTS (
+			SELECT 1
+			FROM member
+			WHERE uuid = #{uuid} and dob IS NULL
+		) AS is_exist;
+	</select>
+
+	<insert id="insertFavorites" parameterType="map">
+		INSERT INTO favorites (member_uuid, category, value)
+		VALUES
+		<foreach collection="favorites" item="favorite" separator=",">
+			(#{memberUuid}, #{favorite.category}, #{favorite.value})
+		</foreach>
+	</insert>
+
+	<update id="insertMoreInfo" parameterType="map">
+		UPDATE member
+		SET name = #{signUpRequestDTO.name},
+			phone = #{signUpRequestDTO.phone},
+			nickname = #{signUpRequestDTO.nickname},
+			mbti = #{signUpRequestDTO.mbti},
+			dob = #{signUpRequestDTO.dob},
+			gender = #{signUpRequestDTO.gender}
+		WHERE uuid = #{memberUuid}
+	</update>
 	
 </mapper>

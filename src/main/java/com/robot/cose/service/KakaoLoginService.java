@@ -41,7 +41,6 @@ public class KakaoLoginService {
     //access토큰 가져오는 메서드
     public String getAccessToken(String code) {
         String tokenUrl = "https://kauth.kakao.com/oauth/token";
-
         try {
             // RestTemplate 인스턴스 생성
             RestTemplate restTemplate = new RestTemplate();
@@ -104,6 +103,7 @@ public class KakaoLoginService {
 
     //카카오 로그인 핸들링 acctoken -> userinfo -> email -> 신규/기존 회원 판별
     public HashMap<String, String> handleKakaoLogin(String code) {
+        System.out.println("Authorization code: " + code);
         HashMap<String, String> result =   new HashMap<>();
         // Access Token 요청
         String accessToken = getAccessToken(code);
