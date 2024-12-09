@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.robot.cose.mapper.DateSpotMapper"> <!-- 인테페이스 위치로 맞춰야함 -->
+
+    <select id="getAllDateSpotById" resultType="com.robot.cose.dto.DateSpotDTO">
+        SELECT * FROM DateSpot;
+    </select>
+
+    <select id="findMainCategory" resultType="map">
+        SELECT c.categoryName, ds.dateSpotIdx, ds.spotName, ds.locate, ds.info, ds.imageURL, GROUP_CONCAT(t.tagName SEPARATOR ', ') AS tags
+        FROM Category c
+                 JOIN DateSpotCategory dsc ON c.categoryIdx = dsc.categoryIdx
+                 JOIN DateSpot ds ON dsc.dateSpotIdx = ds.dateSpotIdx
+                 LEFT JOIN DateSpotTag dst ON ds.dateSpotIdx = dst.dateSpotIdx
+                 LEFT JOIN Tag t ON dst.tagIdx = t.tagIdx
+        GROUP BY c.categoryName, c.categoryIdx, ds.dateSpotIdx
+        ORDER BY c.categoryIdx, ds.dateSpotIdx
+    </select>
+
+</mapper>
