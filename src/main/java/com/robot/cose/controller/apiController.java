@@ -1,6 +1,7 @@
 package com.robot.cose.controller;
 
 import com.robot.cose.dto.SignUpRequestDTO;
+import com.robot.cose.service.DateSpotService;
 import com.robot.cose.service.MemberService;
 import com.robot.cose.util.JwtUtil;
 import lombok.RequiredArgsConstructor;
@@ -8,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @CrossOrigin(origins = "http://localhost:4000")
@@ -17,6 +19,7 @@ import java.util.Map;
 public class apiController {
 
     private final MemberService memberService;
+    private final DateSpotService dateSpotService;
 
     @GetMapping("/check-nickname")
     public ResponseEntity<Map<String, Boolean>> checkNickname(@RequestParam String nickname) {
@@ -55,5 +58,15 @@ public class apiController {
         Map<String, Boolean> response = new HashMap<>();
         response.put("success", true);
         return ResponseEntity.ok(response);
+    }
+
+    @GetMapping("/get_main_datespot")
+    public ResponseEntity<Map<String, List<Map<String, Object>>>> getDateSpotsByCategory() {
+        return ResponseEntity.ok(dateSpotService.getDateSpotsMainCategory());
+    }
+
+    @GetMapping("/get_datespot")
+    public ResponseEntity<List<Map<String, Object>>> getDateSpots() {
+        return ResponseEntity.ok(dateSpotService.getDateSpots());
     }
 }

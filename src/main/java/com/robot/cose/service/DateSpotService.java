@@ -20,7 +20,6 @@ public class DateSpotService {
     }
 
     public Map<String, List<Map<String, Object>>> getDateSpotsMainCategory() {
-        // 카테고리별로 최대 5개씩 조회
         List<Map<String, Object>> results = dateSpotMapper.findMainCategory();
         Map<String, List<Map<String, Object>>> dateSpotsByCategory = new HashMap<>();
 
@@ -36,11 +35,30 @@ public class DateSpotService {
             dateSpotsByCategory.computeIfAbsent(categoryName, k -> new ArrayList<>()).add(result);
         }
 
-        // 카테고리별 최대 5개 데이터만 유지
+        // 카테고리별 최대 5개 데이터만 유지 (수정 필요)
         dateSpotsByCategory.forEach((category, spots) -> {
             dateSpotsByCategory.put(category, spots.stream().limit(5).toList());
         });
 
         return dateSpotsByCategory;
     }
+
+    public List<Map<String, Object>> getDateSpots() {
+        List<Map<String, Object>> results = dateSpotMapper.findMainCategory();
+
+        // 기존 리스트를 반복하면서 tags를 리스트로 변환
+        for (Map<String, Object> result : results) {
+            // 기존 tags 문자열을 가져오기
+            String tagsString = (String) result.get("tags");
+
+            // 문자열을 List<String>으로 변환
+            List<String> tags = tagsString != null ? List.of(tagsString.split(", ")) : new ArrayList<>();
+
+            // 변환된 tags 리스트를 기존 Map에 덮어쓰기
+            result.put("tags", tags);
+        }
+
+        // 변환된 리스트를 반환
+        return results;
+    };
 }
