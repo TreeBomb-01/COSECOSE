@@ -17,4 +17,8 @@
         ORDER BY c.categoryIdx, ds.dateSpotIdx
     </select>
 
+    <select id="getDateSpotById" resultType="map" parameterType="Integer">
+        select * from DateSpot where dateSpotIdx = #{id}
+    </select>
+
 </mapper>

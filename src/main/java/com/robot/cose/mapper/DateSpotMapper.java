@@ -11,4 +11,5 @@ public interface DateSpotMapper {
 
     List<DateSpotDTO> getAllDateSpotById();
     List<Map<String, Object>> findMainCategory();
+    Map<String, Object> getDateSpotById(int id);
 }

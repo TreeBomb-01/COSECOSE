@@ -69,4 +69,9 @@ public class apiController {
     public ResponseEntity<List<Map<String, Object>>> getDateSpots() {
         return ResponseEntity.ok(dateSpotService.getDateSpots());
     }
+
+    @GetMapping("/get_one_datespt")
+    public ResponseEntity<Map<String, Object>> getOneDateSpots(@RequestParam int id) {
+        return ResponseEntity.ok(dateSpotService.getDateSpotbyId(id));
+    }
 }

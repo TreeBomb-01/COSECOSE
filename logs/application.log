@@ -1,38 +1,53 @@
-2024-10-28T12:47:56.683+09:00  INFO 20088 --- [cose] [restartedMain] com.robot.cose.CoseApplication           : Starting CoseApplication using Java 17.0.10 with PID 20088 (C:\capstone\COSECOSE\bin\main started by htb01 in C:\capstone\COSECOSE)
-2024-10-28T12:47:56.691+09:00  INFO 20088 --- [cose] [restartedMain] com.robot.cose.CoseApplication           : No active profile set, falling back to 1 default profile: "default"
-2024-10-28T12:47:56.910+09:00  INFO 20088 --- [cose] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\htb01\.gradle\caches\modules-2\files-2.1\com.oracle.database.jdbc\ojdbc11\21.9.0.0\1aad2e20684ee075bb9ebdca2d83f028e4fd35fa\ojdbc11-21.9.0.0.jar referenced one or more files that do not exist: file:/C:/Users/htb01/.gradle/caches/modules-2/files-2.1/com.oracle.database.jdbc/ojdbc11/21.9.0.0/1aad2e20684ee075bb9ebdca2d83f028e4fd35fa/oraclepki.jar
-2024-10-28T12:47:56.911+09:00  INFO 20088 --- [cose] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-10-28T12:47:56.912+09:00  INFO 20088 --- [cose] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-10-28T12:47:57.846+09:00  INFO 20088 --- [cose] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8090 (http)
-2024-10-28T12:47:57.859+09:00  INFO 20088 --- [cose] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-10-28T12:47:57.860+09:00  INFO 20088 --- [cose] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
-2024-10-28T12:47:57.909+09:00  INFO 20088 --- [cose] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-10-28T12:47:57.911+09:00  INFO 20088 --- [cose] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 998 ms
-2024-10-28T12:47:58.132+09:00  INFO 20088 --- [cose] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-10-28T12:47:58.470+09:00  INFO 20088 --- [cose] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@3de66cfa
-2024-10-28T12:47:58.473+09:00  INFO 20088 --- [cose] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-10-28T12:47:59.926+09:00  INFO 20088 --- [cose] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-10-28T12:48:00.022+09:00  INFO 20088 --- [cose] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8090 (http) with context path '/'
-2024-10-28T12:48:00.051+09:00  INFO 20088 --- [cose] [restartedMain] com.robot.cose.CoseApplication           : Started CoseApplication in 3.754 seconds (process running for 4.285)
-2024-10-28T12:48:06.578+09:00  INFO 20088 --- [cose] [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-10-28T12:48:06.578+09:00  INFO 20088 --- [cose] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-10-28T12:48:06.579+09:00  INFO 20088 --- [cose] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2024-10-28T12:48:51.980+09:00  INFO 16612 --- [cose] [restartedMain] com.robot.cose.CoseApplication           : Starting CoseApplication using Java 17.0.10 with PID 16612 (C:\capstone\COSECOSE\bin\main started by htb01 in C:\capstone\COSECOSE)
-2024-10-28T12:48:51.985+09:00  INFO 16612 --- [cose] [restartedMain] com.robot.cose.CoseApplication           : No active profile set, falling back to 1 default profile: "default"
-2024-10-28T12:48:52.209+09:00  INFO 16612 --- [cose] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\htb01\.gradle\caches\modules-2\files-2.1\com.oracle.database.jdbc\ojdbc11\21.9.0.0\1aad2e20684ee075bb9ebdca2d83f028e4fd35fa\ojdbc11-21.9.0.0.jar referenced one or more files that do not exist: file:/C:/Users/htb01/.gradle/caches/modules-2/files-2.1/com.oracle.database.jdbc/ojdbc11/21.9.0.0/1aad2e20684ee075bb9ebdca2d83f028e4fd35fa/oraclepki.jar
-2024-10-28T12:48:52.209+09:00  INFO 16612 --- [cose] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-10-28T12:48:52.210+09:00  INFO 16612 --- [cose] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-10-28T12:48:53.234+09:00  INFO 16612 --- [cose] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8090 (http)
-2024-10-28T12:48:53.248+09:00  INFO 16612 --- [cose] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-10-28T12:48:53.249+09:00  INFO 16612 --- [cose] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
-2024-10-28T12:48:53.302+09:00  INFO 16612 --- [cose] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-10-28T12:48:53.303+09:00  INFO 16612 --- [cose] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1091 ms
-2024-10-28T12:48:53.560+09:00  INFO 16612 --- [cose] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-10-28T12:48:53.773+09:00  INFO 16612 --- [cose] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@7a0431be
-2024-10-28T12:48:53.775+09:00  INFO 16612 --- [cose] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-10-28T12:48:54.816+09:00  INFO 16612 --- [cose] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-10-28T12:48:54.896+09:00  INFO 16612 --- [cose] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8090 (http) with context path '/'
-2024-10-28T12:48:54.908+09:00  INFO 16612 --- [cose] [restartedMain] com.robot.cose.CoseApplication           : Started CoseApplication in 3.351 seconds (process running for 3.756)
-2024-10-28T12:48:57.420+09:00  INFO 16612 --- [cose] [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-10-28T12:48:57.422+09:00  INFO 16612 --- [cose] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-10-28T12:48:57.423+09:00  INFO 16612 --- [cose] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2024-12-12T14:04:12.640+09:00  WARN 10000 --- [cose] [Test worker] ory$DuplicateJsonObjectContextCustomizer : 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/C:/Users/htb01/.gradle/caches/modules-2/files-2.1/org.json/json/20230227/7a0d4aca76513d8ce81f9b044ce8126b84809ad8/json-20230227.jar!/org/json/JSONObject.class
+	jar:file:/C:/Users/htb01/.gradle/caches/modules-2/files-2.1/com.vaadin.external.google/android-json/0.0.20131108.vaadin1/fa26d351fe62a6a17f5cda1287c1c6110dec413f/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2024-12-12T14:04:12.658+09:00  INFO 10000 --- [cose] [Test worker] com.robot.cose.CoseApplicationTests      : Starting CoseApplicationTests using Java 17.0.10 with PID 10000 (started by htb01 in C:\capstone\COSECOSE)
+2024-12-12T14:04:12.658+09:00  INFO 10000 --- [cose] [Test worker] com.robot.cose.CoseApplicationTests      : No active profile set, falling back to 1 default profile: "default"
+2024-12-12T14:04:13.652+09:00  INFO 10000 --- [cose] [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-12T14:04:14.441+09:00  INFO 10000 --- [cose] [Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@9be7319
+2024-12-12T14:04:14.466+09:00  INFO 10000 --- [cose] [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-12T14:04:15.501+09:00  INFO 10000 --- [cose] [Test worker] com.robot.cose.CoseApplicationTests      : Started CoseApplicationTests in 3.105 seconds (process running for 4.781)
+2024-12-12T14:04:16.491+09:00  INFO 10000 --- [cose] [Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.robot.cose.mapper.MapperTest]: MapperTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-12-12T14:04:16.507+09:00  INFO 10000 --- [cose] [Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.robot.cose.CoseApplication for test class com.robot.cose.mapper.MapperTest
+2024-12-12T14:04:17.074+09:00  INFO 10000 --- [cose] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-12T14:04:17.399+09:00  INFO 10000 --- [cose] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-12-12T14:08:28.907+09:00  WARN 26508 --- [cose] [Test worker] ory$DuplicateJsonObjectContextCustomizer : 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/C:/Users/htb01/.gradle/caches/modules-2/files-2.1/org.json/json/20230227/7a0d4aca76513d8ce81f9b044ce8126b84809ad8/json-20230227.jar!/org/json/JSONObject.class
+	jar:file:/C:/Users/htb01/.gradle/caches/modules-2/files-2.1/com.vaadin.external.google/android-json/0.0.20131108.vaadin1/fa26d351fe62a6a17f5cda1287c1c6110dec413f/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2024-12-12T14:08:28.918+09:00  INFO 26508 --- [cose] [Test worker] com.robot.cose.CoseApplicationTests      : Starting CoseApplicationTests using Java 17.0.10 with PID 26508 (started by htb01 in C:\capstone\COSECOSE)
+2024-12-12T14:08:28.918+09:00  INFO 26508 --- [cose] [Test worker] com.robot.cose.CoseApplicationTests      : No active profile set, falling back to 1 default profile: "default"
+2024-12-12T14:08:30.031+09:00  INFO 26508 --- [cose] [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-12T14:08:31.460+09:00  INFO 26508 --- [cose] [Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@184afb78
+2024-12-12T14:08:31.460+09:00  INFO 26508 --- [cose] [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-12T14:08:32.459+09:00  INFO 26508 --- [cose] [Test worker] com.robot.cose.CoseApplicationTests      : Started CoseApplicationTests in 3.866 seconds (process running for 5.44)
+2024-12-12T14:08:33.308+09:00  INFO 26508 --- [cose] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-12T14:08:33.710+09:00  INFO 26508 --- [cose] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-12-12T14:13:03.911+09:00  INFO 19196 --- [cose] [restartedMain] com.robot.cose.CoseApplication           : Starting CoseApplication using Java 17.0.10 with PID 19196 (C:\capstone\COSECOSE\build\classes\java\main started by htb01 in C:\capstone\COSECOSE)
+2024-12-12T14:13:03.927+09:00  INFO 19196 --- [cose] [restartedMain] com.robot.cose.CoseApplication           : No active profile set, falling back to 1 default profile: "default"
+2024-12-12T14:13:04.088+09:00  INFO 19196 --- [cose] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-12-12T14:13:04.088+09:00  INFO 19196 --- [cose] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-12-12T14:13:04.887+09:00  INFO 19196 --- [cose] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8090 (http)
+2024-12-12T14:13:04.887+09:00  INFO 19196 --- [cose] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-12T14:13:04.887+09:00  INFO 19196 --- [cose] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-12-12T14:13:04.918+09:00  INFO 19196 --- [cose] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-12T14:13:04.918+09:00  INFO 19196 --- [cose] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 830 ms
+2024-12-12T14:13:04.981+09:00  INFO 19196 --- [cose] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-12T14:13:05.845+09:00  INFO 19196 --- [cose] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7aec1fe3
+2024-12-12T14:13:05.845+09:00  INFO 19196 --- [cose] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-12T14:13:06.506+09:00  INFO 19196 --- [cose] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-12-12T14:13:06.546+09:00  INFO 19196 --- [cose] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8090 (http) with context path '/'
+2024-12-12T14:13:06.553+09:00  INFO 19196 --- [cose] [restartedMain] com.robot.cose.CoseApplication           : Started CoseApplication in 3.011 seconds (process running for 3.716)
+2024-12-12T14:13:09.396+09:00  INFO 19196 --- [cose] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-12T14:13:09.815+09:00  INFO 19196 --- [cose] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

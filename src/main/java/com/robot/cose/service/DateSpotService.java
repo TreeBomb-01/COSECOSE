@@ -60,5 +60,10 @@ public class DateSpotService {
 
         // 변환된 리스트를 반환
         return results;
-    };
+    }
+
+    public Map<String, Object> getDateSpotbyId(int id) {
+        Map<String, Object> result = dateSpotMapper.getDateSpotById(id);
+        return result;
+    }
 }
