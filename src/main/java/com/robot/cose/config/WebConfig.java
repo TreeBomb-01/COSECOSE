@@ -10,11 +10,11 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/api/**")
-                .allowedOrigins("http://localhost:4000") // 프론트엔드 주소
+                .allowedOrigins("http://localhost:4000","https://react-template-three-nu.vercel.app/") // 프론트엔드 주소
                 .allowedMethods("GET", "POST", "PUT", "DELETE");
 
         registry.addMapping("/kakao/**")
-                .allowedOrigins("http://localhost:4000")
+                .allowedOrigins("http://localhost:4000", "https://react-template-three-nu.vercel.app/")
                 .allowedMethods("GET", "POST");
 
     }

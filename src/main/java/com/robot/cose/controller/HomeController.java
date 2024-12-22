@@ -14,6 +14,6 @@ public class HomeController {
     
     @GetMapping(value = "/")
     public String home(Model model) {
-        return "mobile/mb_home/login";
+        return "home/home";
     }
 }

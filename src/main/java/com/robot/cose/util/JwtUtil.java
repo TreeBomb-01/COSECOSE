@@ -36,6 +36,7 @@ public class JwtUtil {
         } catch (SignatureException e) {
             throw new RuntimeException("Invalid JWT signature");
         } catch (Exception e) {
+            System.out.println(e.getMessage());
             throw new RuntimeException("Invalid JWT token");
         }
     }

@@ -33,7 +33,7 @@ public class KakaoLoginService {
 
     //로그인 페이지 요청
     public String loginPage() {
-        return  "https://kauth.kakao.com/oauth/authorize?response_type=code"
+        return  "https://kauth.kakao.com/oauth/authorize?response_type=code&prompt=login"
                 + "&client_id=" + client_id
                 + "&redirect_uri=" + redirect_uri;
     }

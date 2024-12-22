@@ -2,11 +2,10 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.3.4'
 	id 'io.spring.dependency-management' version '1.1.6'
-	id 'war'
 }
 
 group = 'com.robot'
-version = '0.0.1-SNAPSHOT'
+version = '0.0.3-SNAPSHOT'
 
 java {
 	toolchain {
@@ -59,6 +58,10 @@ dependencies { //의존성 주입 하는 곳
 	implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
 	runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.5'
 	runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.5' // JSON 처리를 위해 필요
+
+	//배포
+	implementation 'org.springframework:spring-jcl:6.1.13'
+
 
 
 

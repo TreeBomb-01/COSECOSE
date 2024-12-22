@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.robot.cose.mapper.CoseMapper"> <!-- 인테페이스 위치로 맞춰야함 -->
+	
+	<insert id="createCose" parameterType="map" useGeneratedKeys="true" keyProperty="dto.id">
+		INSERT INTO DateCose
+		(user_id, coseName)
+		VALUES(#{uuid}, #{dto.coseName})
+	</insert>
+
+	<insert id="createCosePlaces" parameterType="com.robot.cose.dto.CoseRequestDTO">
+			INSERT INTO CosePlaces (cose_id, date_spot_id,order_in_cose)
+			VALUES
+			<foreach collection="places" item="placeId" index="orderIndex" separator=",">
+				(#{id}, #{placeId},${orderIndex + 1})
+			</foreach>
+	</insert>
+
+
+	<select id="getCose" resultType="map">
+		SELECT
+			c.id AS coseIdx,
+			c.coseName,
+			p.dateSpotIdx AS dateSpotIdx,
+			p.spotName,
+			p.imageURL,
+			p.locate,
+			cp.order_in_cose
+		FROM
+			DateCose c
+				LEFT JOIN
+			CosePlaces cp ON c.id = cp.cose_id
+				LEFT JOIN
+			DateSpot p ON cp.date_spot_id = p.dateSpotIdx
+		ORDER BY
+			c.id, cp.order_in_cose ASC
+	</select>
+
+
+
+
+</mapper>

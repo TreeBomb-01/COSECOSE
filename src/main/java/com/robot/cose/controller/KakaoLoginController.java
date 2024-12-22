@@ -25,11 +25,11 @@ public class KakaoLoginController {
     private final KakaoLoginService kakaoLoginService;
     private final MemberService memberService;
 
-//    @GetMapping("/login")
-//    public ResponseEntity<String> loginPage(){
-//        String kakaoLoginUrl = kakaoLoginService.loginPage();
-//        return ResponseEntity.ok(kakaoLoginUrl);
-//    }
+    @GetMapping("/login")
+    public ResponseEntity<String> loginPage(){
+        String kakaoLoginUrl = kakaoLoginService.loginPage();
+        return ResponseEntity.ok(kakaoLoginUrl);
+    }
 
     @PostMapping("/callback")
     public ResponseEntity<Map<String, String>> checkUser(@RequestBody Map<String, String> request) {
